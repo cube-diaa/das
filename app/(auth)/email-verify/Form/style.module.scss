@@ -1,0 +1,17 @@
+.container {
+  width: 600px;
+  background-color: white;
+  padding-inline: 140px;
+  padding-block: 40px;
+  border-radius: 8px;
+
+  .label {
+    color: #958982;
+  }
+
+  .formFooter {
+    font-size: 16px;
+    padding-block: 5px;
+    text-align: center;
+  }
+}

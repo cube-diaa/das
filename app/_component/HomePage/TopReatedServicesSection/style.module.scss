@@ -1,0 +1,13 @@
+@import '/app/styles/abstracts/mixins';
+@import '/app/styles/abstracts/variables';
+.container {
+  @include padding-container;
+  margin-block: 50px;
+
+  .title {
+    margin: 60px;
+    font-size: 48px;
+    text-align: center;
+    color: $primary-color;
+  }
+}

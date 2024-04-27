@@ -1,0 +1,54 @@
+@import '/app/styles/abstracts/variables';
+
+.container {
+  position: relative;
+
+  .badge {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    padding-inline-end: 30px;
+  }
+
+  .infoCard {
+    .description {
+      color: black;
+      font-weight: 600;
+    }
+
+    .actionbar {
+      .icons {
+        font-size: 12px;
+      }
+
+      display: flex;
+      justify-content: space-between;
+
+      .showButton {
+        font-weight: bold;
+        padding: 8px;
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+
+
+    width: 80%;
+    bottom: -30px;
+    background-color: white;
+    position: absolute;
+    padding-left: 32px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    .name {
+      color: $primary-color;
+      font-size: 24px;
+    }
+
+    .rate {
+      color: $primary-color;
+      font-size: 12px;
+    }
+  }
+
+}

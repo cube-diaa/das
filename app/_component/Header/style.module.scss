@@ -1,0 +1,65 @@
+@import "/app/styles/abstracts/mixins";
+@import "/app/styles/abstracts/variables";
+
+.container {
+  background-color: $secondary-color;
+  padding-block: 22px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 14px;
+  color: white;
+  font-size: 12px;
+  border-bottom: 5px solid $primary-color;
+
+  .searchInput {
+    border-radius: 16px;
+  }
+
+  .item {
+    text-align: center;
+
+    &.navbar {
+      flex: 2;
+    }
+
+    &.searchWrapper {
+      flex: 1;
+
+    }
+
+    &.logo {
+      display: flex;
+      justify-content: center;
+
+      flex: 1;
+    }
+  }
+
+
+}
+
+@include media-query('mobile-min', 'ipad-max') {
+  .container {
+    justify-content: space-between !important;
+    padding-inline: 20px;
+  }
+  .menuIcon {
+  }
+  .logo {
+    flex: unset !important;
+  }
+  .mobileMenuWrapper {
+    background-color: red;
+
+    .mobileMenuItem {
+      padding-block: 16px;
+      color: $primary-color;
+      background-color: $secondary-color;
+    }
+  }
+
+
+}
+
+

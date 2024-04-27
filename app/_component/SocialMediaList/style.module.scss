@@ -1,0 +1,15 @@
+@import "app/styles/abstracts/variables";
+.container {
+  display: flex;
+  gap: 2px;
+
+  .icon {
+    cursor: pointer;
+    width: 12px;
+  }
+
+  .divider {
+    background-color: $primary-color;
+  }
+
+}

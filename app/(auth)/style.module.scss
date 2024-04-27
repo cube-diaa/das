@@ -1,0 +1,36 @@
+@import "/app/styles/abstracts/mixins";
+@import "/app/styles/abstracts/variables";
+
+.container {
+  background-image: url("../assets/loginBackground.svg");
+  background-position: 0px;
+  min-height: 100vh;
+  position: relative;
+  padding-inline: 140px;
+  background-color: $secondary-color;
+
+  .logo-wrapper {
+    padding: 10px;
+    border-bottom: 4px solid $primary-color;
+  }
+
+  .column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .link {
+    color: #1F88BE;
+    text-decoration: underline;
+  }
+}
+
+@include media-query('mobile-min', 'ipad-min') {
+  .container {
+    //background-color: red;
+    padding-inline: 0px
+  }
+}
+
+

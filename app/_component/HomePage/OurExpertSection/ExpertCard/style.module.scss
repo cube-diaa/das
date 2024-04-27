@@ -1,0 +1,71 @@
+@import "app/styles/abstracts/variables";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+
+
+  .rate {
+    color: $primary-color;
+  }
+
+  .footer {
+    transition: 0.4s ease;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .image {
+    width: 300px;
+  }
+
+  .placeholder {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    background-color: rgba(35, 28, 28, 0.44);
+    width: 100%;
+    height: 0%;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+    z-index: 1;
+
+    :first-child {
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    .footer {
+      opacity: 0;
+    }
+
+    .image {
+      opacity: 0.4 !important;
+    }
+
+    .placeholder {
+      height: 100%;
+
+      :first-child {
+        opacity: 1 !important;
+      }
+    }
+  }
+
+
+}

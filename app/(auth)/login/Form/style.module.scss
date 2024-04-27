@@ -1,0 +1,30 @@
+@import "/app/styles/abstracts/mixins";
+@import "/app/styles/abstracts/variables";
+.container {
+  width: 600px;
+  background-color: white;
+  padding-inline: 140px;
+  padding-block: 40px;
+  border-radius: 8px;
+
+  .label {
+    color: #958982;
+  }
+
+  .formFooter {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 12px;
+    padding-block: 5px;
+    text-align: center;
+  }
+}
+
+@include media-query('mobile-min', 'ipad-min') {
+  .container {
+    width: 100%;
+    padding-inline:2%;
+    border-radius: 0px;
+  }
+}

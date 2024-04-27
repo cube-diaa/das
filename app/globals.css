@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.content {
+    width: 100vw;
+    /*min-height: 500px;*/
+    /*background: yellow;*/
+    height: 500px;
+
+}
+
+.app-content {
+    margin-top: 0px;
+    height: fit-content;
+}
+.animate__animated{
+    --animate-duration: 1.5s;
+}

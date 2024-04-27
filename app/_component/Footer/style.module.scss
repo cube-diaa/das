@@ -1,0 +1,109 @@
+@import "/app/styles/abstracts/variables";
+@import "/app/styles/abstracts/mixins";
+
+.container {
+  background-color: $secondary-color;
+  color: white;
+  padding-inline: 100px;
+  height: fit-content;
+  padding-top: 70px;
+  font-size: 12px;
+  border-top: 5px solid $primary-color;
+  .subscriptionNewsLetterBox {
+    margin: 20px;
+
+    .text {
+      margin-block: 20px;
+    }
+
+    .form {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .inputField {
+        margin-top: 20px;
+        width: 300px;
+      }
+
+      .sendButton {
+        height: fit-content;
+        padding-inline: 16px;
+        padding-block: 8px;
+        background-color: $primary-color;
+        border: none;
+        color: white;
+      }
+    }
+  }
+
+  .footerHead {
+    margin-bottom: 45px;
+
+    .logo {
+      width: 250px;
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+
+    .verticalDivider {
+      background-color: $primary-color;
+      width: 1px;
+      //height: 400px;
+      height: 200px;
+    }
+
+    .item {
+      .title {
+        font-size: 18px;
+        margin-bottom: 50px;
+        color: $primary-color
+      }
+    }
+  }
+
+  .divider {
+    background-color: $primary-color;
+    height: 2px;
+  }
+
+  .subFooter {
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+    padding-bottom: 35px;
+  }
+}
+
+@include media-query('mobile-min', 'ipad-min') {
+  .footerHead {
+    display: flex;
+    justify-content: center;
+  }
+  .item {
+    padding: 8px;
+    text-align: center;
+
+  }
+  .verticalDivider {
+    display: none;
+  }
+  .container {
+    padding-inline: 0px;
+  }
+  .content {
+    flex-direction: column;
+  }
+  .subFooter {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding-inline: 20px;
+  }
+  .form {
+    flex-direction: column;
+  }
+}

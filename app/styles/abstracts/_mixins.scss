@@ -1,0 +1,39 @@
+$breakpoints: (
+        'mobile-min':0px,
+        'mobile-max':767px,
+        'ipad-min': 768px,
+        'ipad-max': 1023px,
+        'laptop-min': 1024px,
+        'laptop-max': 1199px,
+        'desktop-min': 1200px,
+        'desktop-max': 4000px
+);
+
+// Mixin to apply styles based on the device size range
+@mixin media-query($min-breakpoint: null, $max-breakpoint: null) {
+  $min-breakpoint-value: map-get($breakpoints, $min-breakpoint);
+  $max-breakpoint-value: map-get($breakpoints, $max-breakpoint);
+
+  @if $min-breakpoint and $max-breakpoint {
+    @media (min-width: $min-breakpoint-value) and (max-width: $max-breakpoint-value) {
+      @content;
+    }
+  } @else if $min-breakpoint {
+    @media (min-width: $min-breakpoint-value) {
+      @content;
+    }
+  } @else if $max-breakpoint {
+    @media (max-width: $max-breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn "Specify at least one breakpoint (min or max).";
+  }
+}
+
+@mixin padding-container {
+  padding-inline: 100px;
+  @include media-query('mobile-min', 'ipad-min') {
+    padding-inline: 10px;
+  }
+}

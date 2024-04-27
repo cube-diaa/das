@@ -1,0 +1,8 @@
+<svg id="Component_335_1" data-name="Component 335 – 1" xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <circle id="Ellipse_314" data-name="Ellipse 314" cx="21" cy="21" r="21" fill="rgba(211,146,77,0.2)"/>
+  <path id="Path_10558" data-name="Path 10558" d="M256.582,548.779a31.811,31.811,0,0,0,7.273-1.747A11.958,11.958,0,0,1,260.774,539v-1a8,8,0,1,0-16,0v1a11.957,11.957,0,0,1-3.083,8.031,31.811,31.811,0,0,0,7.275,1.747m7.62,0a32.365,32.365,0,0,1-7.62,0m7.62,0a4,4,0,1,1-7.62,0M250.772,537h4l-4,6h4" transform="translate(-231.771 -521)" fill="none" stroke="#d3924d" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  <g id="Ellipse_316" data-name="Ellipse 316" transform="translate(24 8)" fill="#d3924d" stroke="#0b352a" stroke-width="1">
+    <circle cx="5" cy="5" r="5" stroke="none"/>
+    <circle cx="5" cy="5" r="4.5" fill="none"/>
+  </g>
+</svg>
