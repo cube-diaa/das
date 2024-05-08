@@ -11,6 +11,7 @@ export default function ExpertCard({
     return (
 
         <div className={style.container}>
+
             <div className={style.placeholder}>
                 <div>
                     <div>
@@ -32,5 +33,6 @@ export default function ExpertCard({
                 <Rate disabled value={rate} className={style.rate}/>
             </div>
         </div>
+
     )
 }

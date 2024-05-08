@@ -1,5 +1,5 @@
 import style from './style.module.scss'
-import {serviceCardProps} from "@/app/_component/HomePage/TopReatedServicesSection/ServiceCard/serviceCardProps";
+import {serviceCardProps} from "./serviceCardProps";
 import Image from "next/image";
 import {Flex, Rate, Space} from "antd";
 import badge from './Icon.svg'
@@ -40,7 +40,6 @@ export default function ServiceCard({
                 <div><Rate className={style.rate} disabled value={rate}/></div>
                 <div className={style.actionbar}>
                     <Space className={style.icons}>
-
                         <ScheduleOutlined/>
                         <ClockCircleOutlined/>
                         <GoldOutlined/>

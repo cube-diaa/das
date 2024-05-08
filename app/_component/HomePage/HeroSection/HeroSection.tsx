@@ -36,34 +36,38 @@ export default function HeroSection() {
 
 
     return (
-        <div>
+        <div className={'hero-section-slider'}>
 
-            <Carousel speed={1500} effect="fade">
+            <Carousel
+                className={'slider'}
+                autoplay={true} speed={1500} effect="fade">
                 {sliders.map(({popularSearch, image, title, description}, index) => {
                     return (<div key={index}>
                         <div className={style.container}>
                             <div className={style.searchBox}>
                                 <div className={style.title}>{title}</div>
-                                <div>{description}</div>
+                                <div><span className={style.descriptionPrefix}></span>{description}</div>
                                 <div className={style.input} ref={ref}>
-                                    <Input suffix={<SearchOutlined className={style.icon}/>}
+                                    <Input addonAfter={<SearchOutlined className={style.icon}/>}
                                            placeholder={"Find & Expert Service"}/>
                                 </div>
-                                <Flex style={{
-                                    width: "100%"
-                                }} vertical={isMobile} justify={isMobile ? "center" : "start"} align={"center"}
-                                      gap={10}>
-                                    <div>
-                                        Popular Searches:
-                                    </div>
-                                    {
-                                        popularSearch.map((item, index) => (<div
-                                            key={index}
-                                            className={style.searchKeyWords}>
-                                            {item}
-                                        </div>))}
+                                {!isMobile && !isIpad &&
+                                    <Flex style={{
+                                        width: "100%"
+                                    }} vertical={isMobile} justify={isMobile ? "center" : "start"} align={"center"}
+                                          gap={10}>
+                                        <div>
+                                            Popular Searches:
+                                        </div>
+                                        {
+                                            popularSearch.map((item, index) => (<div
+                                                key={index}
+                                                className={style.searchKeyWords}>
+                                                {item}
+                                            </div>))}
 
-                                </Flex>
+                                    </Flex>
+                                }
                             </div>
                             {
                                 (isLaptop || isDesktop) &&

@@ -1,13 +1,31 @@
 @import '/app/styles/abstracts/mixins';
 @import '/app/styles/abstracts/variables';
+
 .container {
   @include padding-container;
   margin-block: 50px;
 
+  .serviceCardWrapper {
+    margin-block: 30px;
+  }
+
+  .slider {
+    background-color: white;
+  }
+
   .title {
-    margin: 60px;
-    font-size: 48px;
-    text-align: center;
-    color: $primary-color;
+    text-transform: uppercase;
+  }
+}
+
+@include media-query('mobile-max', 'ipad-min') {
+  .serviceCardWrapper {
+    padding-inline: 30px
+  }
+}
+
+@include media-query('ipad-max', 'laptop-max') {
+  .serviceCardWrapper {
+    padding-inline: 10px
   }
 }

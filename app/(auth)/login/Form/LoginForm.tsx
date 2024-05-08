@@ -12,9 +12,12 @@ import SkipButton from "@/app/(auth)/common/components/SkipButton/SkipButton";
 import {useGoogleLogin} from "@react-oauth/google";
 import {useLinkedIn} from "react-linkedin-login-oauth2";
 import style from './style.module.scss'
+import {useRouter, useSearchParams} from "next/navigation";
 
 export default function LoginForm() {
     const [isPending, startTransition] = useTransition()
+    const router = useRouter()
+    const params = useSearchParams()
     const buttonStyle = {
         paddingBlock: 14,
         height: 'fit-content'
@@ -37,14 +40,22 @@ export default function LoginForm() {
         <FormHeader mainTitle={"Welcome to DAC Platform"}
                     subTitle={"Login to your account."}/>
         <Form layout="vertical"
+              validateTrigger={["onBlur"]}
               onFinish={(values) => {
                   startTransition(() => {
-                      loginAction()
+                      loginAction(values).then((data) => {
+                          router.replace('/')
+                      }).catch((error) => {
+                          alert(error)
+                      })
                   })
               }}>
             <Form.Item
+                initialValue={params.get("email")}
+                hasFeedback
                 name={"email"}
                 rules={[{
+                    type: "email",
                     required: true,
                 }]}
                 label={<div className={style.label}>Email Address</div>}>
@@ -58,7 +69,7 @@ export default function LoginForm() {
                 label={<div className={style.label}>Password</div>}>
                 <Input.Password placeholder="Enter your password"/>
             </Form.Item>
-
+            <Link className={style.forgotPasswordButton} href={"/forgot-password"}>forgot your password?</Link>
             <Space
                 style={{
                     width: '100%',

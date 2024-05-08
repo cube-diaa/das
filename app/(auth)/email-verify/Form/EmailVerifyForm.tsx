@@ -1,9 +1,9 @@
 'use client'
 
 import style from './style.module.scss'
-import {startTransition, useTransition} from "react";
+import {useTransition} from "react";
 import {Button, ConfigProvider, Flex, Form, Input} from "antd";
-import {emailVerifyAction} from "@/app/(auth)/email-verify/actions";
+import {emailVerifyAction} from "../actions";
 import FormHeader from "@/app/(auth)/common/components/FormHeader/FormHeader";
 
 export function EmailVerifyForm() {
@@ -30,7 +30,7 @@ export function EmailVerifyForm() {
             </Form.Item>
             <ConfigProvider theme={{
                 token: {
-                    colorPrimary: "#D3924D"
+                    colorPrimary:style.colorPrimary
                 }
             }}>
                 <Flex>

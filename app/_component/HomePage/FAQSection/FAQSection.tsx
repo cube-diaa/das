@@ -17,26 +17,64 @@ export default function FAQSection({}: fAQSectionProps) {
   it can be found as a welcome guest in many households across the world.
 `;
 
+    const selectedContent: {
+        [key in tabsName]: CollapseProps['items']
+    } = {
+        CLIENT: [
+            {
+                key: '1',
+                label: 'This is panel CLIENT 1',
+                children: <p>{text}</p>,
+            },
+            {
+                key: '2',
+                label: 'This is panel CLIENT 2',
+                children: <p>{text}</p>,
+            },
+            {
+                key: '3',
+                label: 'This is panel CLIENT 3',
+                children: <p>{text}</p>,
+            },
+        ],
+        EXPERT: [
+            {
+                key: '1',
+                label: 'This is panel EXPERT 1',
+                children: <p>{text}</p>,
+            },
+            {
+                key: '2',
+                label: 'This is panel EXPERT 2',
+                children: <p>{text}</p>,
+            },
+            {
+                key: '3',
+                label: 'This is panel EXPERT 3',
+                children: <p>{text}</p>,
+            },
+        ],
+        GENERAL: [
+            {
+                key: '1',
+                label: 'This is panel GENERAL 1',
+                children: <p>{text}</p>,
+            },
+            {
+                key: '2',
+                label: 'This is panel GENERAL 2',
+                children: <p>{text}</p>,
+            },
+            {
+                key: '3',
+                label: 'This is panel GENERAL 3',
+                children: <p>{text}</p>,
+            },
+        ]
+    }
 
-    const items: CollapseProps['items'] = [
-        {
-            key: '1',
-            label: 'This is panel header 1',
-            children: <p>{text}</p>,
-        },
-        {
-            key: '2',
-            label: 'This is panel header 2',
-            children: <p>{text}</p>,
-        },
-        {
-            key: '3',
-            label: 'This is panel header 3',
-            children: <p>{text}</p>,
-        },
-    ];
-    return (<div className={style.container}>
-        <div className={style.title}>FAQ</div>
+    return (<div className={`${style.container} faq-section`}>
+        <div className={'main-section-title'}>FAQ</div>
         <div
             style={{
                 width: '75%',
@@ -44,25 +82,28 @@ export default function FAQSection({}: fAQSectionProps) {
             <ConfigProvider theme={{
                 components: {
                     Segmented: {
+                        colorBgContainer: 'white',
+                        borderRadius: 0,
                         itemSelectedColor: "white",
                         itemSelectedBg: style.colorPrimary,
                         itemActiveBg: style.colorPrimary
                     }
                 }
             }}>
-                <Segmented<string>
-                    defaultValue={"CLIENT"}
+                <Segmented<tabsName>
+                    defaultValue={currentSelectedTab}
                     block
                     size={"large"}
                     options={["CLIENT", "EXPERT", "GENERAL"]}
                     onChange={(value) => {
+                        setCurrentSelectedTab(value)
                     }}/>
             </ConfigProvider>
         </div>
         <div style={{
             width: '75%',
         }}>
-            <Collapse size={"large"} items={items} defaultActiveKey={['1']}/>
+            <Collapse size={"large"} items={selectedContent[currentSelectedTab]} defaultActiveKey={['1']}/>
         </div>
     </div>)
 }

@@ -1,7 +1,7 @@
 'use client'
 import style from './style.module.scss'
 import {signUpFormProps} from "@/app/(auth)/sign-up/Form/signUpFormProps";
-import {useTransition} from "react";
+import {useState, useTransition} from "react";
 import {signUpAction} from "@/app/(auth)/sign-up/actions";
 import {Button, ConfigProvider, Flex, Form, Input} from "antd";
 import FormHeader from "@/app/(auth)/common/components/FormHeader/FormHeader";
@@ -10,6 +10,7 @@ import SkipButton from "@/app/(auth)/common/components/SkipButton/SkipButton";
 
 export default function SignUpForm({}: signUpFormProps) {
     const [isPending, startTransition] = useTransition()
+    const [isLinkSent, setIsLinkSent] = useState<boolean>(false)
     const buttonStyle = {
         paddingBlock: 14,
         height: 'fit-content'
@@ -17,37 +18,52 @@ export default function SignUpForm({}: signUpFormProps) {
     return (<div className={style.container}>
         <FormHeader mainTitle={"Welcome to DAC Platform"}
                     subTitle={"By logging in you are accepting our."}/>
-        <Form layout="vertical"
-              onFinish={(values) => {
-                  startTransition(() => {
-                      signUpAction()
-                  })
-              }}>
+        {!isLinkSent ? <><Form layout="vertical"
+                               onFinish={(values) => {
+                                   startTransition(async () => {
+                                       signUpAction(values).then((value) => {
+                                           setIsLinkSent(true)
+                                       }).catch((err) => {
+                                           alert(err)
+                                       })
+                                   })
+                               }}>
             <Form.Item
                 rules={[{
+                    message: "Please Enter Your First Name",
                     required: true,
                 }]}
                 label={<div className={style.label}>Full Name</div>}
-                name={"full_name"}>
+                name={"first_name"}>
                 <Input placeholder={"Enter Full Name"}/>
             </Form.Item>
             <Form.Item
                 rules={[{
+                    message: "Please Enter Your SurName",
                     required: true,
                 }]}
                 label={<div className={style.label}>Surname</div>}
-                name={"sure_name"}>
+                name={"last_name"}>
                 <Input placeholder={"Sure Name"}/>
             </Form.Item>
             <Form.Item
                 rules={[{
+                    message: "Please Enter Your Email",
                     required: true,
                 }]}
                 label={<div className={style.label}>Email Address</div>}
                 name={"email"}>
                 <Input placeholder={"Email"}/>
             </Form.Item>
-
+            <Form.Item
+                rules={[{
+                    message: "Please Enter Password",
+                    required: true,
+                }]}
+                label={<div className={style.label}>Password</div>}
+                name={"password"}>
+                <Input.Password placeholder={"Password"}/>
+            </Form.Item>
             <ConfigProvider theme={{
                 token: {
                     colorPrimary: style.colorPrimary
@@ -61,7 +77,8 @@ export default function SignUpForm({}: signUpFormProps) {
                             block>{String("Verify your email address").toUpperCase()}</Button>
                 </Flex>
             </ConfigProvider>
-        </Form>
+        </Form></> : <div className={style.sendVerificationMessage}>We Are Sent Verification Link to Your Email , Please Check Your Inbox.</div>}
+
         <div className={style.formFooter}>
             By logging in you are accepting our
             <div>

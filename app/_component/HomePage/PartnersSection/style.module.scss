@@ -1,0 +1,61 @@
+@import '/app/styles/abstracts/variables';
+@import '/app/styles/abstracts/mixins';
+
+.container {
+  color: white;
+  background-color: $secondary-color;
+  //@include margin-container;
+  @include padding-container;
+
+  .partnerWords {
+    .name {
+      margin-block: 25px;
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .sliderContainer {
+      .avatar {
+        &.notInStage {
+          filter: grayscale(100%);
+        }
+
+      }
+
+      .slider {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 20px;
+        color: white;
+      }
+
+      width: 250px;
+      //margin-top: 10px;
+    }
+
+    .quote {
+      width: 500px;
+    }
+  }
+
+
+  .partnerLogoSection {
+    background-color: #F8F8F8;
+    padding: 20px;
+
+    .partnerLogoWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@include media-query('mobile-min', 'ipad-min') {
+  .quote {
+    text-align: center;
+  }
+}

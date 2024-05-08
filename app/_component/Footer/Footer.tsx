@@ -65,50 +65,57 @@ export default function Footer() {
             </div>
             <div className={style.content}>
                 <div className={style.item}>
-                    <div className={style.title}>Categories</div>
-                    <Space direction="vertical" size={9}>
-                        {servers.map((server, index) => <div key={index}>{server}</div>)}
-                    </Space>
+                    <div>
+                        <div className={style.title}>Categories</div>
+                        <Space direction="vertical" size={9}>
+                            {servers.map((server, index) => <div key={index}>{server}</div>)}
+                        </Space>
+                    </div>
                 </div>
-                <Divider className={style.verticalDivider} type="vertical"/>
+
 
                 <div className={style.item}>
-                    <div className={style.title}>SITE MAP</div>
-                    <Space direction="vertical" size={9}>
-                        {siteMap.map(({label, href}, index) => <Link href={href} key={index}>{label}</Link>)}
-                    </Space>
-
+                    <Divider className={style.verticalDivider} type="vertical"/>
+                    <div>
+                        <div className={style.title}>SITE MAP</div>
+                        <Space direction="vertical" size={9}>
+                            {siteMap.map(({label, href}, index) => <Link href={href} key={index}>{label}</Link>)}
+                        </Space>
+                    </div>
                 </div>
-                <Divider className={style.verticalDivider} type="vertical"/>
+
                 <div className={style.item}>
-                    <div className={style.title}>DAC</div>
-                    <Space style={{
-                        textAlign: "left"
-                    }} direction={"vertical"} size={9}>
-                        {
-                            contactUsInfo.map(({label, icon}, index) => <div key={index}>
+                    <Divider className={style.verticalDivider} type="vertical"/>
+                    <div>
+                        <div className={style.title}>DAC</div>
+                        <Space style={{
+                            textAlign: "left"
+                        }} direction={"vertical"} size={9}>
+                            {
+                                contactUsInfo.map(({label, icon}, index) => <div key={index}>
 
-                                    <Space size={"middle"}>
-                                        <div>{icon}</div>
-                                        <div>{label}</div>
-                                    </Space>
-                                </div>
-                            )
-                        }
-                    </Space>
-                    <div className={style.subscriptionNewsLetterBox}>
-                        <div className={style.text}>knowing you&apos;re always on the best energy deal.</div>
-                        <Form className={style.form}>
+                                        <Space size={"middle"}>
+                                            <div>{icon}</div>
+                                            <div>{label}</div>
+                                        </Space>
+                                    </div>
+                                )
+                            }
+                        </Space>
+                        <div className={style.subscriptionNewsLetterBox}>
+                            <div className={style.text}>knowing you&apos;re always on the best energy deal.</div>
+                            <Form className={style.form}>
 
-                            <Form.Item
-                                name={"email"}
-                                rules={[{
-                                    required: true,
-                                }]}>
-                                <Input className={style.inputField} placeholder={"Enter your Email Address"}/>
-                            </Form.Item>
-                            <Button htmlType={"submit"} className={style.sendButton}>SEND</Button>
-                        </Form>
+                                <Form.Item
+                                    name={"email"}
+                                    rules={[{
+                                        required: true,
+                                    }]}>
+                                    <Input className={style.inputField} placeholder={"Enter your Email Address"}/>
+                                </Form.Item>
+                                <Button htmlType={"submit"} className={style.sendButton}>SEND</Button>
+                            </Form>
+                        </div>
                     </div>
                 </div>
             </div>

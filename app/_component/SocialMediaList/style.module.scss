@@ -1,14 +1,17 @@
 @import "app/styles/abstracts/variables";
+
 .container {
   display: flex;
   gap: 2px;
 
   .icon {
     cursor: pointer;
-    width: 12px;
+    width: 18px;
   }
 
   .divider {
+    width: 2px;
+    height: 20px;
     background-color: $primary-color;
   }
 

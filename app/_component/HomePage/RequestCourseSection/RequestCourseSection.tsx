@@ -16,7 +16,10 @@ export default function RequestCourseSection() {
         <div className={`${style.container}`}>
             <div className={`${style.formBox} ${inView ? "animate__animated animate__lightSpeedInLeft" : ""}`}
                  ref={ref}>
-                <div className={style.title}>Request a list of headings</div>
+                <div className={'main-section-title'} style={{
+                    color: "white"
+                }}>Request a list of headings
+                </div>
                 <div className={style.description}>Please enter your email address to receive course titles,<br/> the
                     topics
                     will
@@ -35,7 +38,9 @@ export default function RequestCourseSection() {
                     }}>
                     <Flex gap={10}>
                         <CheckCircleOutlined style={{fontSize: 16}}/>
-                        <div>
+                        <div style={{
+                            color: "#ACACAC"
+                        }}>
                             Your email has been successfully registered, headlines will be sent to you
                             soon.
                         </div>
@@ -44,7 +49,7 @@ export default function RequestCourseSection() {
             </div>
             <div className={`${style.imageBox} ${inView ? "animate__animated animate__lightSpeedInRight" : ""}`}
                  ref={ref}>
-                <Image src={messageImage} alt={"send message"}/>
+                <Image draggable={false} src={messageImage} alt={"send message"}/>
             </div>
         </div>)
 }

@@ -1,11 +1,19 @@
 @import "/app/styles/abstracts/mixins";
 @import "/app/styles/abstracts/variables";
+
 .container {
   width: 600px;
   background-color: white;
   padding-inline: 140px;
   padding-block: 40px;
   border-radius: 8px;
+
+  .forgotPasswordButton {
+    display: block;
+    text-align: right;
+    margin-top: -20px;
+    margin-bottom: 10px;
+  }
 
   .label {
     color: #958982;
@@ -24,7 +32,7 @@
 @include media-query('mobile-min', 'ipad-min') {
   .container {
     width: 100%;
-    padding-inline:2%;
+    padding-inline: 2%;
     border-radius: 0px;
   }
 }

@@ -1,0 +1,170 @@
+@import "app/styles/main.scss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: #FFFFFF;
+  color: black;
+  font-family: var(--font-content);
+}
+
+.ant-carousel {
+  .slick-dots {
+    z-index: 5 !important;
+  }
+}
+
+.ant-input-group-addon {
+  background-color: $primary-color !important;
+}
+
+.section-loading {
+  min-height: 200px;
+}
+
+///////////////////// pagination override styles //////////////////////////////
+
+
+.ant-pagination {
+  .ant-pagination-item {
+    border: 1px solid #958982;
+    color: #958982;
+  }
+
+  .ant-pagination-item-active {
+    background-color: $primary-color;
+    border-color: $primary-color;
+
+    a {
+      color: white;
+    }
+  }
+
+  .ant-pagination-item-active {
+    &:hover {
+      border-color: $primary-color;
+
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////////
+
+.content {
+  width: 100vw;
+  /*min-height: 500px;*/
+  /*background: yellow;*/
+  height: 500px;
+
+}
+
+.app-content {
+  margin-top: 0px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1600px;
+}
+
+.loading-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $primary-color;
+  min-height: 500px;
+  width: 100%;
+}
+
+
+//////////////////////////////////////////////////////////////////////
+.hero-section-slider {
+  .ant-carousel {
+    .slick-dots {
+      &.slick-dots-bottom {
+        display: flex;
+        justify-content: left;
+        left: 100px;
+        bottom: 100px;
+      }
+
+      li {
+        width: 50px;
+        opacity: 1 !important;
+        background-color: white;
+
+        &.slick-active {
+          button {
+            background-color: $primary-color !important;
+          }
+
+        }
+
+        button {
+
+          &::before {
+            display: none;
+            //width: 20px;
+            //background-color: $primary-color !important;
+            //background-color: #1F88BE !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-query('mobile-min', 'ipad-min') {
+  .hero-section-slider {
+    .ant-carousel {
+      .slick-dots {
+        &.slick-dots-bottom {
+          display: flex;
+          //justify-content: center;
+          bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////////////////
+
+
+.ant-collapse {
+  //padding-bottom: 10px;
+  border: none;
+  border-radius: 0px;
+  background-color: rgba(198, 198, 198, 0.07);
+}
+
+.ant-collapse-expand-icon {
+  position: absolute;
+  right: 0px;
+}
+
+.ant-collapse-item {
+  border: 1px solid rgba(198, 198, 198, 0.61);
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.ant-collapse-header {
+  border-radius: 0px !important;
+  border: 1px solid rgba(198, 198, 198, 0.61);
+}
+
+.ant-segmented-item {
+  background-color: white;
+}
+

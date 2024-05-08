@@ -1,5 +1,50 @@
-.title {
-  color: red;
-  transition: all ease-in-out 0.9s !important;
+@import "app/styles/abstracts/mixins";
+@import "app/styles/abstracts/variables";
+
+.container {
+  @include padding-container;
+  margin-bottom: 120px;
+  margin-top: 50px;
+
+  .pageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      font-family: var(--font-title);
+      font-size: 48px;
+      color: $primary-color;
+    }
+
+    .breadcrumbs {
+      margin-bottom: 25px;
+    }
+
+    .actions {
+      .icon {
+        &.active {
+
+        }
+
+        color: $primary-color;
+        cursor: pointer;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .paginationContainer {
+    display: flex;
+    justify-content: right;
+    margin-top: 120px;
+  }
+
 }
 
+@include media-query('mobile-min', 'mobile-max') {
+  .paginationContainer {
+    justify-content: center !important;
+
+  }
+}

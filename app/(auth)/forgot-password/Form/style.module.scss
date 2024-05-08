@@ -1,0 +1,14 @@
+@import "app/styles/abstracts/variables";
+
+.container {
+  background-color: white;
+  padding-inline: 140px;
+  padding-block: 40px;
+  border-radius: 8px;
+
+  .message {
+    text-align: center;
+    color: $primary-color;
+    font-weight: 600;
+  }
+}

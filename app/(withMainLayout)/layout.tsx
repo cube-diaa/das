@@ -3,6 +3,8 @@ import React from "react";
 import Footer from "@/app/_component/Footer";
 import dynamic from "next/dynamic";
 import 'animate.css';
+import {Flex} from "antd";
+
 const Header = dynamic(() => import('@/app/_component/Header/Component'), {ssr: false})
 export default function MainLayout({
                                        children
@@ -13,9 +15,11 @@ export default function MainLayout({
         <div>
             <Header/>
         </div>
-        <div className={'app-content'}>
-            {children}
-        </div>
+        {/*<Flex justify={"center"}>*/}
+            <div className={'app-content'}>
+                {children}
+            </div>
+        {/*</Flex>*/}
         <Footer/>
     </div>
 }

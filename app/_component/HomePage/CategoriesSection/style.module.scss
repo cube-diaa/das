@@ -1,0 +1,25 @@
+@import "app/styles/abstracts/mixins";
+
+.container {
+  @include padding-container;
+  padding-block: 10px;
+  padding-bottom: 50px;
+  background-color: #ECECEC;
+
+
+  .slider {
+
+  }
+
+  .title {
+    text-align: center;
+    text-transform: uppercase;
+
+  }
+
+  .list {
+
+
+  }
+
+}

@@ -1,0 +1,9 @@
+@import '../abstracts/variables';
+@import "../abstracts/fonts";
+
+.main-section-title {
+  font-family: var(--font-title);
+  font-size: 48px;
+  color: $primary-color;
+  margin-bottom: 32px;
+}

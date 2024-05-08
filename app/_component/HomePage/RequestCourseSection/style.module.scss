@@ -3,14 +3,14 @@
 
 .container {
   background-image: url("./background.svg");
-  background-position: 0px 0px;
+  background-position: 200px 0px;
   display: flex;
   align-items: center;
   gap: 150px;
   background-color: $secondary-color;
   color: white;
   @include padding-container;
-
+  @include margin-container;
   padding-block: 130px;
 
   .formBox {
@@ -24,13 +24,17 @@
       gap: 20px;
 
       .input {
+        border: none;
+        background-color: #136856;
         margin-top: 20px;
         width: 300px;
         border-radius: 2px !important;
+        color: white;
 
       }
 
       .sendButton {
+        border-radius: 3px;
         height: fit-content;
         padding-inline: 20px;
         padding-block: 10px;
@@ -43,12 +47,16 @@
   }
 
   .imageBox {
+    margin-left: 75px;
+    display: flex;
+    justify-content: center;
   }
 }
 
 @include media-query('mobile-min', 'mobile-max') {
   .container {
     background-position: -600px -50px;
+
     .form {
       align-items: center;
       justify-content: center;

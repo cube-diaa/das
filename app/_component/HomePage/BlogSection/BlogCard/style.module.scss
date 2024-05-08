@@ -1,0 +1,78 @@
+@import "app/styles/abstracts/variables";
+@import "app/styles/abstracts/mixins";
+
+.container {
+  position: relative;
+
+  .imageWrapper {
+
+  }
+
+  .blogInfoCard {
+    background-color: white;
+    padding: 16px 0px 16px 16px;
+    width: 80%;
+    bottom: -50px;
+    border-radius: 3px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: absolute;
+
+    .title {
+      color: $primary-color;
+      font-size: 28px;
+      font-family: var(--font-title);
+    }
+
+    .description {
+      padding-right: 10px;
+      color: black;
+      font-weight: 600;
+    }
+
+    .publisherCard {
+      margin-top: 5px;
+      position: relative;
+
+      .publisherName {
+
+      }
+
+      .date {
+      }
+
+
+      .showButton {
+        font-weight: bold;
+        padding: 8px;
+        position: absolute;
+        background-color: $primary-color;
+        color: white;
+        right: 0px;
+        bottom: -17px;
+      }
+
+
+    }
+
+  }
+}
+
+@include media-query('mobile-min', 'mobile-max') {
+  .container {
+    margin-bottom: 150px;
+  }
+  .blogInfoCard {
+    bottom: -150px !important;
+    width: 100% !important;
+  }
+}
+
+@include media-query('ipad-min', 'ipad-max') {
+  .container {
+    margin-bottom: 150px;
+  }
+  .blogInfoCard {
+    bottom: -100px !important;
+    width: 80% !important;
+  }
+}

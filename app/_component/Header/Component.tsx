@@ -29,7 +29,7 @@ export default function Component() {
         text: "About us",
         icon: aboutUsIcon
     }, {
-        id: "blog",
+        id: "blog?page=1",
         onClick: (id) => {
             router.push(id)
         },
@@ -79,8 +79,8 @@ export default function Component() {
                         style={{
                             cursor: 'pointer'
                         }}
-                        onClick={() => router.push('/',{
-                            scroll:false,
+                        onClick={() => router.push('/', {
+                            scroll: false,
                         })}
                         draggable={false}
                         alt={"logo"}

@@ -11,6 +11,7 @@
   }
 
   .infoCard {
+
     .description {
       color: black;
       font-weight: 600;
@@ -32,7 +33,7 @@
       }
     }
 
-
+    border-radius: 3px;
     width: 80%;
     bottom: -30px;
     background-color: white;
@@ -41,6 +42,7 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
     .name {
+      font-family: var(--font-title);
       color: $primary-color;
       font-size: 24px;
     }

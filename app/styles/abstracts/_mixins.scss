@@ -37,3 +37,9 @@ $breakpoints: (
     padding-inline: 10px;
   }
 }
+@mixin margin-container {
+  margin-block: 100px;
+  @include media-query('mobile-min', 'ipad-min') {
+    margin-block: 75px;
+  }
+}

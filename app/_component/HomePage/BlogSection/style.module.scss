@@ -1,0 +1,82 @@
+@import "app/styles/abstracts/mixins";
+@import "app/styles/abstracts/variables";
+
+.container {
+  @include padding-container;
+  @include margin-container;
+  .mobileSectionTitle {
+    text-align: center;
+    width: 100%;
+    font-size: 48px;
+    color: $primary-color;
+  }
+
+  .masterBlogCard {
+    display: flex;
+    .imageContainer {
+      display: flex;
+      justify-content: end;
+      flex: 1;
+    }
+
+    .content {
+
+      flex: 1;
+      position: relative;
+
+      .sectionTitle {
+        text-align: right;
+      }
+
+      .masterBlogCardInfo {
+        border-radius: 3px;
+        top: 40%;
+        left: -60px;
+        padding: 15px;
+        position: absolute;
+        background-color: white;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        .title {
+          font-size: 36px;
+          color: $primary-color;
+          font-family: var(--font-title);
+        }
+
+        .publisherInfo {
+
+          margin-top: 30px;
+
+          .publisherName {
+
+          }
+
+          .date {
+          }
+
+
+          .showButton {
+            right: 0px;
+            bottom: 0px;
+            position: absolute;
+            font-weight: bold;
+            padding: 8px;
+            background-color: $primary-color;
+            color: white;
+          }
+
+
+        }
+
+        .description {
+          font-weight: 600;
+
+        }
+
+      }
+    }
+
+
+  }
+
+}

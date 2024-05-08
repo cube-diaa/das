@@ -1,0 +1,46 @@
+@import "app/styles/abstracts/variables";
+@import "app/styles/abstracts/mixins";
+
+.container {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-inline: 24px;
+  height: 75px;
+  border-radius: 8px;
+  margin-inline: 25px;
+  margin-block: 20px;
+
+  .number {
+    font-size: 24px;
+    position: absolute;
+    left: -25px;
+    background-color: $primary-color;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 0px !important;
+    margin: 0px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    color: white;
+  }
+
+  .name {
+    width: 45%;
+    text-align: center;
+    font-weight: 600;
+  }
+
+}
+
+@include media-query('mobile-min', 'ipad-min') {
+  .name {
+    font-size: 14px;
+    width: 75% !important;
+  }
+}

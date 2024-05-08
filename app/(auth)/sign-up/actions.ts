@@ -1,6 +1,7 @@
 'use server'
-import {redirect} from "next/navigation";
+import {RegisterRequest} from "@/api/auth/register/interfaces";
+import registerApi from "@/api/auth/register/registerApi";
 
-export async function signUpAction() {
-    redirect('/email-verify')
+export async function signUpAction(data: RegisterRequest) {
+    return registerApi(data)
 }
